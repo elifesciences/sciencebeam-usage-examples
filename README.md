@@ -1,6 +1,6 @@
 # ScienceBeam Usage Examples
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/elifesciences/sciencebeam-usage-examples/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/elifesciences/sciencebeam-usage-examples/HEAD?urlpath=lab)
 
 This repo provides usage examples for ScienceBeam.
 In particular [ScienceBeam Parser](https://github.com/elifesciences/sciencebeam-parser).
@@ -11,7 +11,7 @@ The examples are provided as [Jupyter notebooks](notebooks).
 - [ScienceBeam Parser: Start Service using Python API and use Rest API](notebooks/sciencebeam-parser/sciencebeam-parser-service.ipynb) ([open in colab](https://colab.research.google.com/github/elifesciences/sciencebeam-usage-examples/blob/develop/notebooks/sciencebeam-parser/sciencebeam-parser-service.ipynb))
 - [ScienceBeam Parser: Use Python API to parse PDF to TEI XML](notebooks/sciencebeam-parser/sciencebeam-parser-library.ipynb) ([open in colab](https://colab.research.google.com/github/elifesciences/sciencebeam-usage-examples/blob/develop/notebooks/sciencebeam-parser/sciencebeam-parser-library.ipynb))
 
-[Launch notebooks in binder](https://mybinder.org/v2/gh/elifesciences/sciencebeam-usage-examples/HEAD)
+[Launch notebooks in binder](https://mybinder.org/v2/gh/elifesciences/sciencebeam-usage-examples/HEAD?urlpath=lab)
 
 ## Running the notebooks locally
 
