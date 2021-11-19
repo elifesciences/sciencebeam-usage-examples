@@ -13,3 +13,5 @@ USER jovyan
 
 COPY notebooks ./notebooks
 WORKDIR /home/jovyan/notebooks
+
+ENV JUPYTER_ENABLE_LAB=yes
