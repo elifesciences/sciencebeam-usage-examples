@@ -12,3 +12,4 @@ RUN apt-get update \
 USER jovyan
 
 COPY notebooks ./notebooks
+WORKDIR /home/jovyan/notebooks

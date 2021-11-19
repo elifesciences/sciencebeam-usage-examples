@@ -14,6 +14,5 @@ services:
           - NB_GID=${GROUP_ID:-1000}
         ports:
             - "${SCIENCEBEAM_USAGE_EXAMPLES_JUPYTER_PORT}:8888"
-        working_dir: /home/jovyan/notebooks
         volumes:
             - ./notebooks:/home/jovyan/notebooks
