@@ -36,7 +36,7 @@ jupyter-stop:
 	docker-compose down -v
 
 
-jupyter-notebook-lint:
+jupyter-lint-notebooks:
 	$(JUPYTER_DEV_RUN) \
 	bash -c ' \
 		jupyter nbconvert \

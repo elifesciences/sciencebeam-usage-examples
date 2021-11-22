@@ -21,6 +21,9 @@ jobs:
       - name: Build image
         run: |
           make jupyter-build
+      - name: Lint notebooks
+        run: |
+          make jupyter-lint-notebooks
       - name: Run and test notebooks
         run: |
           make jupyter-run-and-test-all-notebooks
