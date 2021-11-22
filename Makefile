@@ -43,6 +43,9 @@ jupyter-notebook-lint:
 			--to=script \
 			--output-dir=./.temp/converted-notebooks/ \
 			./notebooks/**/*.ipynb \
+		&& sed --in-place \
+			's/^get_ipython.*//' \
+			./.temp/converted-notebooks/*.py \
 		&& python -m pylint ./.temp/converted-notebooks/*.py \
 			--max-line-length=$(NOTEBOOK_MAX_LINE_LENGTH) \
 			--disable=$(NOTEBOOK_PYLINT_EXCLUSIONS) \
