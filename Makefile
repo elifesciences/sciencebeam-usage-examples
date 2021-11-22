@@ -8,6 +8,10 @@ JUPYTER_DEV_RUN = $(JUPYTER_DOCKER_COMPOSE) run --rm \
 	--workdir=/home/jovyan \
 	jupyter
 
+# Cells starts scrolling horizontally after 116 characters
+NOTEBOOK_MAX_LINE_LENGTH = 116
+NOTEBOOK_PYLINT_EXCLUSIONS = pointless-statement,expression-not-assigned,trailing-newlines,wrong-import-position,redefined-outer-name
+
 
 .require-%:
 	@ if [ "${${*}}" = "" ]; then \
@@ -32,10 +36,23 @@ jupyter-stop:
 	docker-compose down -v
 
 
+jupyter-notebook-lint:
+	$(JUPYTER_DEV_RUN) \
+	bash -c ' \
+		jupyter nbconvert \
+			--to=script \
+			--output-dir=/tmp/converted-notebooks/ \
+			./notebooks/**/*.ipynb \
+		&& python -m pylint /tmp/converted-notebooks/*.py \
+			--max-line-length=$(NOTEBOOK_MAX_LINE_LENGTH) \
+			--disable=$(NOTEBOOK_PYLINT_EXCLUSIONS) \
+	'
+
+
 jupyter-run-and-test-all-notebooks:
 	$(JUPYTER_DEV_RUN) \
 		jupyter nbconvert \
 		--to=notebook \
 		--output-dir="/tmp/ran-notebooks" \
 		--execute \
-		"notebooks/**/*.ipynb"
+		"./notebooks/**/*.ipynb"
