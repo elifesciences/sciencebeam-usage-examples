@@ -10,7 +10,7 @@ JUPYTER_DEV_RUN = $(JUPYTER_DOCKER_COMPOSE) run --rm \
 
 # Cells starts scrolling horizontally after 116 characters
 NOTEBOOK_MAX_LINE_LENGTH = 116
-NOTEBOOK_PYLINT_EXCLUSIONS = pointless-statement,expression-not-assigned,trailing-newlines,wrong-import-position,redefined-outer-name
+NOTEBOOK_PYLINT_EXCLUSIONS = pointless-statement,expression-not-assigned,trailing-newlines,wrong-import-position,redefined-outer-name,wrong-import-order
 
 
 .require-%:
