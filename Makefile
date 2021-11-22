@@ -41,9 +41,9 @@ jupyter-notebook-lint:
 	bash -c ' \
 		jupyter nbconvert \
 			--to=script \
-			--output-dir=/tmp/converted-notebooks/ \
+			--output-dir=./.temp/converted-notebooks/ \
 			./notebooks/**/*.ipynb \
-		&& python -m pylint /tmp/converted-notebooks/*.py \
+		&& python -m pylint ./.temp/converted-notebooks/*.py \
 			--max-line-length=$(NOTEBOOK_MAX_LINE_LENGTH) \
 			--disable=$(NOTEBOOK_PYLINT_EXCLUSIONS) \
 	'
