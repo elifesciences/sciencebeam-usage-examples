@@ -1,0 +1,26 @@
+name: Python package
+
+on:
+  push:
+    branches: [ develop ]
+    tags:
+      - 'v*'  # Push events to matching v*, i.e. v1.0, v20.15.10
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: [3.7]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build image
+        run: |
+          make jupyter-build
+      - name: Run and test notebooks
+        run: |
+          make jupyter-run-and-test-all-notebooks
