@@ -11,6 +11,10 @@ RUN apt-get update \
 
 USER jovyan
 
+COPY requirements.build.txt ./
+RUN pip install --disable-pip-version-check --no-warn-script-location \
+    -r requirements.build.txt
+
 COPY notebooks ./notebooks
 WORKDIR /home/jovyan/notebooks
 
