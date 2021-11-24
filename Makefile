@@ -41,6 +41,7 @@ jupyter-lint-notebooks:
 	bash -c ' \
 		jupyter nbconvert \
 			--to=script \
+			--TemplateExporter.exclude_markdown=True \
 			--output-dir=./.temp/converted-notebooks/ \
 			./notebooks/**/*.ipynb \
 		&& sed --in-place \
